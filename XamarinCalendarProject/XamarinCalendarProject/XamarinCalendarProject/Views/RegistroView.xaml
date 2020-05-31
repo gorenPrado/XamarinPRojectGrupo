@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             xmlns:local="clr-namespace:XamarinCalendarProject"
+             BindingContext="{Binding Source={x:Static local:App.Locator}, Path=LoginViewModel}"
+             x:Class="XamarinCalendarProject.Views.RegistroView">
+    <ContentPage.Content>
+        <ScrollView Orientation="Vertical">
+            <StackLayout>
+                <Label Text="Registrate, es gratis!" FontSize="40" VerticalOptions="Start" HorizontalOptions="CenterAndExpand" />
+
+                <Label Text="Nombre: " VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+                <Entry Text="{Binding Nombre}" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Entry>
+
+                <Label Text="Correo" VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+                <Entry Text="{Binding Correo}" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Entry>
+
+                <Label Text="Nacionalidad: " VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+                <Entry Text="{Binding Nacionalidad}" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Entry>
+
+                <Label Text="Oficio: " VerticalOptions="Start" HorizontalOptions="FillAndExpand"/>
+                <Entry Text="{Binding Oficio}" HorizontalOptions="FillAndExpand" VerticalOptions="Start"></Entry>
+
+                <Button Command="{Binding Registro}" Text="Registrarse" HorizontalOptions="FillAndExpand"></Button>
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

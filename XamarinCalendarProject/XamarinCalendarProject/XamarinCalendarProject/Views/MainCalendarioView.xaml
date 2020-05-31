@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="XamarinCalendarProject.Views.MainCalendarioView"
+             xmlns:custom="clr-namespace:XamarinCalendarProject.CustomsControls"
+             xmlns:pages="clr-namespace:XamarinCalendarProject.Views">
+    <MasterDetailPage.Master>
+        <ContentPage Title="Menu"
+                 BackgroundColor="Aqua">
+            <StackLayout Orientation="Vertical">
+                <StackLayout BackgroundColor="Crimson"
+                             HeightRequest="300">
+                    <!--<Image Source="" HorizontalOptions="FillAndExpand" VerticalOptions="FillAndExpand"
+                           />-->
+                </StackLayout>
+                <StackLayout VerticalOptions="FillAndExpand">
+                    <ListView x:Name="lsvmenu"
+                          RowHeight="100"
+                           ItemSelected="lsvmenu_ItemSelected">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <custom:CustomViewCellControl SelectedItemBackgroundColor="Wheat">
+                                    <StackLayout VerticalOptions="FillAndExpand"
+                                             Orientation="Horizontal"
+                                             Padding="20"
+                                             Spacing="20">
+                                        <Image Source="{Binding Imagen}"
+                                            HorizontalOptions="Start" VerticalOptions="Center"/>
+                                        <Label Text="{Binding Titulo}" FontSize="20"
+                                             VerticalOptions="Center" TextColor="Black"/>
+                                    </StackLayout>
+                                </custom:CustomViewCellControl>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </StackLayout>
+        </ContentPage>
+    </MasterDetailPage.Master>
+    <MasterDetailPage.Detail>
+        <NavigationPage>
+
+        </NavigationPage>
+    </MasterDetailPage.Detail>
+</MasterDetailPage>
